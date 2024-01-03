@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>SmartFan Remote Control</title>
+        <!-- https://4.imimg.com/data4/FM/HQ/ANDROID-64483251/product-500x500.jpeg -->
+        <link rel="icon" href="https://lair.pythonanywhere.com/feri-is/resources/fansmol.png">
+
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='https://lair.pythonanywhere.com/feri-is/resources/smartFanWebApp.css'>
+        <script src="https://lair.pythonanywhere.com/feri-is/resources/smartFanWebApp.js"></script>
+
+        <link rel='stylesheet' type='text/css' media='screen' href='https://lair.pythonanywhere.com/feri-is/resources/smartFanUI.css'>
+        <script src='https://lair.pythonanywhere.com/feri-is/resources/smartFanUI.js'></script>
+    </head>
+
+    <body>
+
+        <header id="mainUI"></header>
+
+        <script>
+            loadExternalElement("https://lair.pythonanywhere.com/feri-is/resources/smartFanUI.html", "mainUI", function(){
+                view = new SmartFanView("mainUI")
+                data = new SmartFanData(AUTHORIZATION_KEY);
+                UI = new SmartFanUI(view, data);
+            });
+        </script>
+
+    </body>
+
+</html>
